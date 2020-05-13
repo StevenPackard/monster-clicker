@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Clicker</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col-12">
+          <h1>Total Zenny:<span id="zenny">0</span></h1>
+        </div>
+        <div class="col-12">
+          <img onclick="app.gameController.attack('click')" class=" picture"
+            src="https://vignette.wikia.nocookie.net/nintendo/images/4/48/Rathalos_SSBU.png/revision/latest?cb=20181206001224&path-prefix=en"
+            alt="">
+        </div>
+        <div class="col-12 mt-5">
+          <button id="SNSbutton" class="btn btn-danger"
+            onclick="app.gameController.purchaseItem('Sword and Shield')">Sword and
+            Shield: <span id="SNSquant">0</span></button>
+          <button id="LSbutton" class="btn btn-danger" onclick="app.gameController.purchaseItem('Longsword')">Longsword:
+            <span id="LSquant">0</span></button>
+          <button id="GSbutton" class="btn btn-danger"
+            onclick="app.gameController.purchaseItem('Greatsword')">Greatsword: <span id="GSquant">0</span></button>
+        </div>
+        <div class="col-12 mt-5">
+          <button class="btn btn-success" id="P1button" onclick="app.gameController.purchasePalico('Roger')">Roger:
+            <span id="P1quant">0</span></button>
+          <button class="btn btn-success" id="P2button" onclick="app.gameController.purchasePalico('Sammy')">Sammy:
+            <span id="P2quant">0</span></button>
+          <button class="btn btn-success" id="P3button" onclick="app.gameController.purchasePalico('Anubis')">Anubis:
+            <span id="P3quant">0</span></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <script src="/App/main.js" type="module"></script>
+</body>
+
+</html>

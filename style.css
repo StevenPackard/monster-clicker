@@ -1,0 +1,18 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/957464882660268955/C9DF25C49B988C0823312A2F472B991F5E7351E9/);
+  background-position: center;
+  background-size: cover;
+}
+main{
+  flex-grow: 1;
+}
+
+
+
+.picture{
+  height: 500px;
+  width: 500px;
+}
