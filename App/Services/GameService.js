@@ -20,7 +20,7 @@ export default class GameService {
   attack(attackName) {
     // console.log(attackName + " from service");
     _player.zenny += (_player.attacks[attackName] + _player.clickModifier);
-
+    _player.clicks++
   }
   autoClick() {
     _player.zenny += _player.autoClicker
@@ -34,14 +34,17 @@ export default class GameService {
       _swordAndShield.quantity++
       _player.clickModifier += _swordAndShield.multiplier
       _player.zenny -= _swordAndShield.price
+      _swordAndShield.price *= 1.5
     } else if (itemName == "Longsword") {
       _longSword.quantity++
       _player.clickModifier += _longSword.multiplier
       _player.zenny -= _longSword.price
+      _longSword.price *= 1.5
     } else if (itemName == "Greatsword") {
       _greatSword.quantity++
       _player.clickModifier += _greatSword.multiplier
       _player.zenny -= _greatSword.price
+      _greatSword.price *= 1.5
     }
   }
 
@@ -61,12 +64,15 @@ export default class GameService {
     }
   }
 
-
+  //#region GET STATEMENTS
   get TotalZenny() {
     return _player.zenny
   }
   get TotalAuto() {
     return _player.autoClicker
+  }
+  get TotalClicks() {
+    return _player.clicks
   }
   get TotalSNS() {
     return _swordAndShield.quantity
@@ -95,7 +101,17 @@ export default class GameService {
   get P3price() {
     return _palico3.price
   }
+  get P1quant() {
+    return _palico1.quantity
+  }
+  get P2quant() {
+    return _palico2.quantity
+  }
+  get P3quant() {
+    return _palico3.quantity
+  }
 
+  //#endregion
 }
 
 

@@ -9,28 +9,67 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="full-shadow">
   <main>
     <div class="container-fluid">
-      <div class="row text-center">
+      <div class="row text-center text-light">
         <div class="col-12">
           <h1>Total Zenny:<span id="zenny">0</span></h1>
         </div>
-        <div class="col-12">
-          <img onclick="app.gameController.attack('click')" class=" picture"
-            src="https://vignette.wikia.nocookie.net/nintendo/images/4/48/Rathalos_SSBU.png/revision/latest?cb=20181206001224&path-prefix=en"
-            alt="">
+      </div>
+      <div class="row d-flex">
+        <div class="col-4 text-light">
+          <div class="row">
+            <div class="col-12">
+              <h3>Rules</h3>
+              <ul>
+                <li><b>You must collect enough Zenny to escape!</b></li>
+                <li><b>Click on the monster to collect Zenny</b></li>
+                <li><b>Purchase Items to increase your Zenny per click</b></li>
+                <li><b>Palicos will collect Zenny for you automatically!</b></li>
+              </ul>
+            </div>
+            <div class="col-12">
+              <h3>Items</h3>
+              <ul>
+                <li><b>Each Sword and Shield provides you 1 extra Zenny per click.</b></li>
+                <li><b> You have <span id="SNSquant">0</span> SnS.</b></li>
+                <li><b>Each Longsword provides you 2 extra Zenny per click.</b></li>
+                <li><b> You have <span id="LSquant">0</span> LS.</b></li>
+                <li><b>Each Greatsword provides you 5 extra Zenny per click.</b></li>
+                <li><b> You have <span id="GSquant">0</span> GS</b></li>
+              </ul>
+            </div>
+            <div class="col-12">
+              <h3>Palicos</h3>
+              <ul>
+                <li><b>Each time you hire Roger, he will collect 20 Zenny every 3 seconds.</b></li>
+                <li><b>You have <span id="P1quant"></span> Roger.</li>
+                <li><b>Each time you hire Sammy, she will collect 50 Zenny every 3 seconds.</b></li>
+                <li><b>You have <span id="P2quant"></span> Sammy.</li>
+                <li><b>Each time you hire Anubis, he will collect 200 Zenny every 3 seconds.</b></li>
+                <li><b>You have <span id="P3quant"></span> Anubis.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="col-12 mt-5">
+        <div class="col-8" id="monster">
+          <img onclick="app.gameController.attack('click')" class="picture-rath" src="/Images/Rath.png"></img>
+        </div>
+      </div>
+      <div class="row text-center text-light">
+        <div class="col-6 mt-5">
+          <h1>Items</h1>
           <button id="SNSbutton" class="btn btn-danger"
-            onclick="app.gameController.purchaseItem('Sword and Shield')">Sword and
-            Shield: <span id="SNSquant">0</span></button>
+            onclick="app.gameController.purchaseItem('Sword and Shield')">Sword and Shield: $<span
+              id="SNSprice"></span></button>
           <button id="LSbutton" class="btn btn-danger" onclick="app.gameController.purchaseItem('Longsword')">Longsword:
-            <span id="LSquant">0</span></button>
+            $<span id="LSprice"></span></button>
           <button id="GSbutton" class="btn btn-danger"
-            onclick="app.gameController.purchaseItem('Greatsword')">Greatsword: <span id="GSquant">0</span></button>
+            onclick="app.gameController.purchaseItem('Greatsword')">Greatsword: $<span id="GSprice"></span></button>
         </div>
-        <div class="col-12 mt-5">
+        <div class="col-6 mt-5">
+          <h1>Palicos</h1>
           <button class="btn btn-success" id="P1button" onclick="app.gameController.purchasePalico('Roger')">Roger:
             <span id="P1quant">0</span></button>
           <button class="btn btn-success" id="P2button" onclick="app.gameController.purchasePalico('Sammy')">Sammy:
@@ -39,6 +78,7 @@
             <span id="P3quant">0</span></button>
         </div>
       </div>
+    </div>
     </div>
   </main>
 

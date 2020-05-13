@@ -8,6 +8,20 @@ function _draw() {
   document.getElementById("SNSquant").innerText = _gameService.TotalSNS.toString()
   document.getElementById("LSquant").innerText = _gameService.TotalLS.toString()
   document.getElementById("GSquant").innerText = _gameService.TotalGS.toString()
+  document.getElementById("SNSprice").innerText = _gameService.SNSprice.toString()
+  document.getElementById("LSprice").innerText = _gameService.LSprice.toString()
+  document.getElementById("GSprice").innerText = _gameService.GSprice.toString()
+  document.getElementById("P1quant").innerText = _gameService.P1quant.toString()
+  document.getElementById("P2quant").innerText = _gameService.P2quant.toString()
+  document.getElementById("P3quant").innerText = _gameService.P3quant.toString()
+}
+
+function _setMonster() {
+  if (_gameService.TotalClicks == 100) {
+    document.getElementById("monster").innerHTML = `<img onclick="app.gameController.attack('click')" class="picture-nergi" src="/Images/Nergigante.png"></img>`
+  } else if (_gameService.TotalClicks == 1000) {
+    document.getElementById("monster").innerHTML = `<img onclick="app.gameController.attack('click')" class="picture-safi" src="/Images/Safi.png"></img>`
+  }
 }
 
 function _disableItems() {
@@ -58,6 +72,7 @@ export default class GameController {
     // console.log("Hello from Controller");
     _disableItems()
     _disablePalicos()
+    _setMonster()
   }
 
   attack(attackName) {
@@ -66,6 +81,7 @@ export default class GameController {
     _draw()
     _disableItems()
     _disablePalicos()
+    _setMonster()
   }
 
   purchaseItem(itemName) {

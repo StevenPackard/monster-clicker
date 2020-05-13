@@ -2,7 +2,7 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/957464882660268955/C9DF25C49B988C0823312A2F472B991F5E7351E9/);
+  background-image: url(https://i.redd.it/3p0qd6is8nx21.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -10,9 +10,24 @@ main{
   flex-grow: 1;
 }
 
+.full-shadow{
+  text-shadow: 3px 3px black;
+}
 
 
-.picture{
-  height: 500px;
-  width: 500px;
+
+.picture-rath{
+  height: 600px;
+  width: 700px;
+}
+.picture-nergi{
+  height: 600px;
+  width: 800px;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+.picture-safi{
+  height: 600px;
+  width: 700px;
+  margin-top: 20px
 }
