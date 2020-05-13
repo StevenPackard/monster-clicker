@@ -34,17 +34,17 @@ export default class GameService {
       _swordAndShield.quantity++
       _player.clickModifier += _swordAndShield.multiplier
       _player.zenny -= _swordAndShield.price
-      _swordAndShield.price *= 1.5
+      _swordAndShield.price *= 2
     } else if (itemName == "Longsword") {
       _longSword.quantity++
       _player.clickModifier += _longSword.multiplier
       _player.zenny -= _longSword.price
-      _longSword.price *= 1.5
+      _longSword.price *= 2
     } else if (itemName == "Greatsword") {
       _greatSword.quantity++
       _player.clickModifier += _greatSword.multiplier
       _player.zenny -= _greatSword.price
-      _greatSword.price *= 1.5
+      _greatSword.price *= 2
     }
   }
 
@@ -53,14 +53,17 @@ export default class GameService {
       _palico1.quantity++
       _player.autoClicker += _palico1.multiplier
       _player.zenny -= _palico1.price
+      _palico1.price *= 2
     } else if (palicoName == "Sammy") {
       _palico2.quantity++
       _player.autoClicker += _palico2.multiplier
       _player.zenny -= _palico2.price
+      _palico2.price *= 2
     } else if (palicoName == "Anubis") {
       _palico3.quantity++
       _player.autoClicker += _palico3.multiplier
       _player.zenny -= _palico3.price
+      _palico3.price *= 2
     }
   }
 

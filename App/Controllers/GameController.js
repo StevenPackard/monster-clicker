@@ -14,6 +14,9 @@ function _draw() {
   document.getElementById("P1quant").innerText = _gameService.P1quant.toString()
   document.getElementById("P2quant").innerText = _gameService.P2quant.toString()
   document.getElementById("P3quant").innerText = _gameService.P3quant.toString()
+  document.getElementById("P1price").innerText = _gameService.P1price.toString()
+  document.getElementById("P2price").innerText = _gameService.P2price.toString()
+  document.getElementById("P3price").innerText = _gameService.P3price.toString()
 }
 
 function _setMonster() {
@@ -55,9 +58,11 @@ function _disablePalicos() {
 
   if (_gameService.TotalZenny >= _gameService.P1price) {
     cantBuyP1.removeAttribute("disabled")
-  } else if (_gameService.TotalZenny >= _gameService.P2price) {
+  }
+  if (_gameService.TotalZenny >= _gameService.P2price) {
     cantBuyP2.removeAttribute("disabled")
-  } else if (_gameService.TotalZenny >= _gameService.P3price) {
+  }
+  if (_gameService.TotalZenny >= _gameService.P3price) {
     cantBuyP3.removeAttribute("disabled")
   }
 }
@@ -73,6 +78,7 @@ export default class GameController {
     _disableItems()
     _disablePalicos()
     _setMonster()
+    _draw
   }
 
   attack(attackName) {
